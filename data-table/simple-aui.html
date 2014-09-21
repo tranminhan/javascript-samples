@@ -1,5 +1,13 @@
 <html>
     <head>
+        <link rel="stylesheet" href="aui/css/aui.css" media="all">
+        <link rel="stylesheet" href="aui/css/aui-experimental.css" media="all">
+        <!--[if IE 9]><link rel="stylesheet" href="aui/css/aui-ie9.css" media="all"><![endif]-->
+        <script src="aui/js/aui-dependencies.js"></script>
+        <script src="aui/js/aui.js"></script>
+        <script src="aui/js/aui-experimental.js"></script>
+        <script src="aui/js/aui-soy.js"></script>
+        
         <link type="text/css" rel="stylesheet" href="css/jquery.dataTables.css"/>
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/jquery.dataTables.js"></script>
@@ -12,7 +20,7 @@
     </head>
 
     <body>
-        <table id="example" class="display" cellspacing="0" width="100%">
+        <table id="example" class="aui aui-table-sortable">
             <thead>
                 <tr>
                     <th>Name</th>

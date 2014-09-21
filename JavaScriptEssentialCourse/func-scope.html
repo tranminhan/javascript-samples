@@ -1,0 +1,27 @@
+<html>
+
+    <head>
+        <script type="text/javascript" src="Person.js"></script>
+        <script type="text/javascript">
+            (function()
+             {
+                console.log("Hello");
+                function thisIsAGlobalFunction(name)
+                {
+                    console.log("hello from a global function");
+                }
+
+                thisIsAGlobalFunction();
+
+                var me = new Person("An", "Tran", 27);
+                me.sayHi();    
+                me.callMyPrivateFunction();
+             }());
+            
+        </script>
+    </head>
+        
+    <body>
+        Please look at the console to see the result
+    </body>
+</html>

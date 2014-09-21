@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <script type="text/javascript">
+        (function() 
+         {
+            var myName = "An Tran";
+            
+            function printMyName() 
+            {
+                console.log("within the function, myName = " + myName);
+                myName = "An Tran is being changed"
+            }
+            
+            printMyName();
+            console.log("outside the function, myName = " + myName);
+            
+            var myWifeName = "Thuy Ngoc";
+            function printMyWifeName() 
+            {
+                var innerMyWifeName = myWifeName;
+                console.log("within the function, myWifeName = " + innerMyWifeName);
+                innerMyWifeName = "Thuy Ngoc is being changed";
+                console.log("within the function after changed, myWifeName = " + innerMyWifeName);
+            }
+            
+            printMyWifeName();
+            console.log("outside the function, myWifeName = " + myWifeName);
+            
+         }());
+        </script>
+    </head>
+    
+    <body></body>
+</html>

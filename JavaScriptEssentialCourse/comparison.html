@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            (function()
+             {
+                console.log("Thing looks good");
+                var a = 1;
+                var aAsString = "1";
+                
+                console.log("compare with a == aAsString is " + (a == aAsString));
+                console.log("compare with a === aAsString is " + (a === aAsString));
+                
+                var b = "2";
+                var b2 = "2";
+                
+                console.log("compare with b == b2 is " + (b == b2));
+                console.log("compare with b === b2 is " + (b === b2));
+                
+                var array = [1, 2, 3];
+                var array2 = [1, 2, 3];
+                var array3 = array2;
+       
+                console.log("compare with array == array2 is " + (array == array2));
+                console.log("compare with array === array2 is " + (array === array2));
+                console.log("array is " + array);
+                console.log("array2 is " + array2);
+                
+                console.log("compare with array3 == array2 is " + (array3 == array2));
+                console.log("compare with array3 === array2 is " + (array3 === array2));
+                
+                function makeRandomNumber( minNum, maxNum )
+                {
+                    if (minNum == undefined)
+                    {
+                        var minNum = 1;
+                    }
+                    if (maxNum == undefined)
+                    {
+                        var maxNum = 10;
+                    }
+                    
+                    console.log("minNum = " + minNum);
+                    console.log("maxNum = " + maxNum);
+                    
+                    var numDiff = maxNum - minNum;
+                    var random = Math.random();
+                    return Math.ceil(random * numDiff) + minNum;
+                }
+                         
+                console.log("a random number is " + makeRandomNumber());
+                
+                function guessANumber( guess )
+                {
+                    var theNumber = makeRandomNumber(1, 10);
+                    if (guess == theNumber)
+                    {
+                        console.log("You win!");
+                    }
+                    else 
+                    {
+                        console.log("Sorry, the number is " + theNumber + " and you guessed " + guess);
+                    }
+                }
+                
+                guessANumber(9);
+                guessANumber(8);
+                guessANumber(7);
+             })();
+        
+        </script>
+    </head>
+    <body>
+        Please open the console to see the result
+    
+    </body>
+</html>

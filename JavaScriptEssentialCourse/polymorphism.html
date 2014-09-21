@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>Welcome to Polymorphism</title>
+        <script type="text/javascript">
+            (function()
+             {
+                console.log("Thing looks good");
+                function pageReady()
+                {
+                    console.log("add: " + add(10, 20));
+                    console.log("add: " + add(10, 20, 30));
+                    
+                    console.log("addv2: " + addv2(10, 20));
+                    console.log("addv2: " + addv2(10, 20, 30));
+                }
+                
+                function add(arg1, arg2)
+                {
+                    return arg1 + arg2;
+                }
+                
+                // this function comes after and will override the previous function
+                function add(arg1, arg2, arg3) 
+                {
+                    return arg1 + arg2 + arg3;
+                }
+                
+                function addv2(arg1, arg2, arg3) 
+                {
+                    return arg1 + arg2 + arg3;
+                }
+                // this function comes after and will override the previous function
+                function addv2(arg1, arg2)
+                {
+                    return arg1 + arg2;
+                }
+
+                window.addEventListener("load", pageReady);
+             })();
+        </script>
+    
+    </head>
+    <body>
+    
+    </body>
+</html>

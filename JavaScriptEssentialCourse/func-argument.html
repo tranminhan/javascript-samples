@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <script type="text/javascript" src="func-argument.js"></script>
+        <script type="text/javascript">
+            (function()
+             {
+                function makeRandomNumber( maxNum )
+                {
+                    var random = Math.random();
+                    return Math.ceil(random * maxNum);
+                }
+                
+                function makeRandomNumber( minNum, maxNum )
+                {
+                    var numDiff = maxNum - minNum;
+                    var random = Math.random();
+                    return Math.ceil(random * numDiff) + minNum;
+                }
+                
+                function printArgs( arg )
+                {
+                    for (i = 0; i < arguments.length; i++)
+                    {
+                        console.log(" the " + i + "th argument is "+ arguments[i]);
+                    }
+                }
+                
+                console.log("a random number within 20: " + makeRandomNumber(20));
+                console.log("a random number within 50: " + makeRandomNumber(50));
+                console.log("a random number within 100: " + makeRandomNumber(100));
+                
+                printArgs("a", 10, true);
+                printArgs("a", "b", null);
+                
+                console.log("a random number in range 10 - 20: " + makeRandomNumber(10, 20));
+                console.log("a random number in range 900 - 1000: " + makeRandomNumber(900, 1000));
+             }());
+        </script>
+    </head>
+    
+    <body>
+        Please open the console to the see the result
+    </body>
+</html>

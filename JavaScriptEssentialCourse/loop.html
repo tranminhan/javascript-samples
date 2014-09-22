@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <script type="text/javascript" src="Person.js"></script>
+        <script type="text/javascript">
+            (function()
+             {
+                for(i = 0; i < 10; i++)
+                {
+                    console.log("the number is " + i);
+                }
+                
+                var an = new Person("An", "Tran", 27);
+                var ngoc = new Person("Ngoc", "Nguyen", 27);
+                var family = [an, ngoc];
+                
+                for(i = 0; i < family.length; i++)
+                {
+                    family[i].sayHi();
+                }
+                
+             }());
+        
+        </script>
+    </head>
+    
+    <body>
+        Please open the console to see the resutl
+    
+    </body>
+    
+</html>

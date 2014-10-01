@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            (function()
+            {
+                console.log("Hello, thing is working fine!")
+                
+                function makeFunc() 
+                {
+                    var name = "Mozilla";
+                
+                    function displayName() 
+                    {
+                        console.log(name);
+                    }
+                    
+                    return displayName;
+                }
+
+                var myFunc = makeFunc();
+                myFunc();
+                
+            })();
+        </script>
+    </head>
+    <body>
+        Please look at the console to see the result
+    </body>
+</html>

@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            (function()
+            {
+                
+                var counter = (function()
+                    {
+                        var privateCounter = 0;
+                    
+                        function changeBy(val)
+                        {
+                            privateCounter += val;
+                        };
+                        
+                        return { // bring this open bracket to its own like breaks JS in Chrome and Safari
+                            increment: function() 
+                            {
+                                changeBy(1);
+                            },
+                            decrement: function()
+                            {
+                                changeBy(-1);
+                            },
+                            value: function() 
+                            {
+                                return privateCounter;
+                            }
+                        };
+                    
+                    })();
+                
+                console.log(counter.value());
+                counter.increment();
+                counter.increment();
+                console.log(counter.value());
+            })();
+        </script>
+    </head>
+    <body>
+        Please look at the console to see the result
+    </body>
+</html>

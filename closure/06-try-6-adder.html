@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            (function()
+            {
+                console.log("Hello, thing is working fine!")
+                
+                function adder(x)
+                {
+                    return function(y) 
+                    {
+                        return x + y;
+                    }
+                }
+                
+                var add5To = adder(5);
+                var add10To = adder(10);
+                
+                console.log(add5To(10));
+                console.log(add10To(100));
+            })();
+        </script>
+    </head>
+    <body>
+        Please look at the console to see the result
+    </body>
+</html>

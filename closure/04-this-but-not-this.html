@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            (function()
+            {
+                console.log("Hello, thing is working fine!")
+                
+                var john = 
+                {
+                    name: "John",
+                    greet: function(person)
+                    {
+                        console.log("Hi " + person + ", I'm " + this.name);
+                    }
+                };
+                
+                var fx = john.greet;
+                fx("Peter");
+                
+            })();
+        </script>
+    </head>
+    <body>
+        Please look at the console to see the result
+    </body>
+</html>

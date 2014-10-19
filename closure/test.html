@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <style type="text/css" media="screen">
+        /* Linked Styles */
+        body {
+            padding: 0 !important;
+            margin: 0 !important;
+            display: block !important;
+            -webkit-text-size-adjust: none;
+            background-image: url(http://rev.zeeta.vn/images/email/background.jpg);
+            background-position: 0 0;
+            background-repeat: no-repeat repeat-y
+        }
+
+        a {
+            color: #64972f;
+            text-decoration: underline
+        }
+
+        p {
+            padding: 5px 0 !important;
+            margin: 0 !important
+        }
+    </style>
+</head>
+<body>
+
+<div class="border">
+<input type="submit"  value="Print"
+name="Submit" id="printbtn"
+onclick="print('D:/asb.Pdf')" />
+    
+    <h2 class="title">
+        <span>Chi tiết hoá đơn</span>
+    </h2>
+    <section id="invoice" class="aui-page-panel-content aui">
+        <h3>Thông tin chi tiết</h3>
+
+        <form class="aui">
+            <fieldset class="group">
+                <div class="field-group">
+                    <label for="publicNumber">Mã hóa đơn:</label>
+                    <input class="text" type="text" id="publicNumber" name="publicNumber" readonly="true" value="INVOICE-100" />
+                </div>
+                <div class="field-group">
+                    <label for="createdDate">Ngày tạo:</label>
+                    <input class="text" type="text" id="createdDate" name="createdDate" readonly="true" value="02/10/2014" />
+                </div>
+                <div class="field-group">
+                    <label for="paidDate">Ngày thanh toán:</label>
+                    <input class="text" type="text" id="paidDate" name="paidDate" readonly="true" value="02/10/2014" />
+                </div>
+                <div class="field-group">
+                    <label>Tổng tiền:</label>
+                    <input class="text" readonly="true" value="100000.0" />
+                </div>
+            </fieldset>
+        </form>
+
+        <h3>Chi tiết</h3>
+        <table class="aui">
+            <thead>
+            <tr>
+                <th>Nội dung</th>
+                <th>Thành tiền</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span>PROPERTY 123</span>
+                </td>
+                <td>
+                    <span>100000.0</span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+</div>
+
+</body>
+</html>

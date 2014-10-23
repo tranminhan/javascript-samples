@@ -1,0 +1,41 @@
+<!doctype html>
+<html ng-app="parking">
+    <head>
+        <title>Parking</title>
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script type="text/javascript">
+            var parking = angular.module("parking", []);
+
+            parking.controller("parkingCtrl", function($scope){
+                $scope.cars = [
+                    {plate: '6MBV006'},
+                    {plate: '5BBM299'},
+                    {plate: '5AOJ230'}
+                ];
+
+                $scope.park = function(car) {
+                    $scope.cars.push(angular.copy(car));
+                    delete $scope.car;
+                };
+            });
+        </script>
+    </head>
+    <body ng-controller="parkingCtrl">
+        <h3>Pack Parking</h3>
+        <input type="text" ng-model="car.plate"/>
+        <button ng-click="park(car)">Park</button>
+        <table>
+            <thead>
+                <tr>
+                    <td>Plate</td>
+                </tr>    
+            </thead>
+            <tbody>
+                <tr ng-repeat="car in cars">
+                    <td>{{car.plate}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </body>
+</html>

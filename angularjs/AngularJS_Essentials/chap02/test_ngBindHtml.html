@@ -1,0 +1,19 @@
+<!doctype html>
+<html ng-app="parking">
+    <head>
+        <title>Parking</title>
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script type="text/javascript">
+            var parking = angular.module("parking", []);
+
+            parking.controller("parkingCtrl", function($scope){
+                $scope.appTitle = "<b>From the scope</b><script>alert('Baby')</script>";
+            });
+        </script>
+    </head>
+    <body ng-controller="parkingCtrl">
+        <h3 ng-bind-html="appTitle">Pack Parking</h3>
+        
+
+    </body>
+</html>

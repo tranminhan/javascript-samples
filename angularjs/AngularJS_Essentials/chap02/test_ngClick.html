@@ -1,0 +1,52 @@
+<!doctype html>
+<html ng-app="parking">
+    <head>
+        <title>Parking</title>
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script type="text/javascript">
+            var parking = angular.module("parking", []);
+
+            parking.controller("parkingCtrl", function($scope){
+                $scope.cars = [
+                    {plate: '6MBV006', entrance: new Date()},
+                    {plate: '5BBM299', entrance: new Date()},
+                    {plate: '5AOJ230', entrance: new Date()}
+                ];
+
+                $scope.park = function(car) {
+                    car.entrance = new Date();
+                    $scope.cars.push(angular.copy(car));
+                    delete $scope.car;
+                };
+            });
+        </script>
+        <style type="text/css">
+              .odd {
+                color: red;
+              }
+              .even {
+                color: blue;
+              }
+        </style>
+    </head>
+    <body ng-controller="parkingCtrl">
+        <h3>Pack Parking</h3>
+        <input type="text" ng-model="car.plate"/>
+        <button ng-click="park(car)">Park</button>
+        <table>
+            <thead>
+                <tr>
+                    <td>Plate</td>
+                    <td>Entrance</td>
+                </tr>    
+            </thead>
+            <tbody>
+                <tr ng-repeat="car in cars">
+                    <td ng-class-even="'even'" ng-class-odd="'odd'">{{car.plate}}</td>
+                    <td>{{car.entrance}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </body>
+</html>

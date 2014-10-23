@@ -1,0 +1,56 @@
+<!doctype html>
+<html ng-app="parking">
+    <head>
+        <title>Parking</title>
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script type="text/javascript">
+            var parking = angular.module("parking", []);
+
+            parking.controller("parkingCtrl", function($scope){
+                $scope.cars = [
+                    {plate: '6MBV006', entrance: new Date(), color: 'Red'},
+                    {plate: '5BBM299', entrance: new Date(), color: 'Green'},
+                    {plate: '5AOJ230', entrance: new Date(), color: 'Blue'}
+                ];
+
+                $scope.colors = ["White", "Black", "Blue", "Red", "Silver"];
+
+                $scope.park = function(car) {
+                    car.entrance = new Date();
+                    $scope.cars.push(angular.copy(car));
+                    delete $scope.car;
+                };
+            });
+        </script>
+        <style type="text/css">
+              .selected {
+                background-color: #FAFAD2;
+              }
+        </style>
+    </head>
+    <body ng-controller="parkingCtrl">
+        <h3>Pack Parking</h3>
+        <input type="text" ng-model="car.plate"/>
+        <select ng-model="car.color" ng-options="color for color in colors">Pick a color</select>
+        <button ng-click="park(car)" ng-disabled="!car.plate || !car.color">Park</button>
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Plate</th>
+                    <th>Color</th>
+                    <th>Entrance</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="car in cars" ng-class="{selected: car.selected}">
+                    <td><input type="checkbox" ng-model="car.selected"/></td>
+                    <td ng-class-even="'even'" ng-class-odd="'odd'">{{car.plate}}</td>
+                    <td><span ng-bind="car.color" ng-style="{color: car.color}"></span></td>
+                    <td>{{car.entrance}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </body>
+</html>

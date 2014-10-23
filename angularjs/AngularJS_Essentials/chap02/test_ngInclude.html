@@ -1,0 +1,19 @@
+<!doctype html>
+<html ng-app="parking">
+    <head>
+        <title>Parking</title>
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script type="text/javascript">
+            var parking = angular.module("parking", []);
+
+            parking.controller("parkingCtrl", function($scope){
+                
+            });
+        </script>
+        
+    </head>
+    <body ng-controller="parkingCtrl">
+        <h3>Pack Parking</h3>
+        <div ng-include="'partial.html'"></div>
+    </body>
+</html>

@@ -5,6 +5,9 @@ parking.controller("parkingCtrl", function($scope){
         {plate: '5AOJ230', entrance: new Date(), color: 'Blue'}
     ];
 
+    $scope.alertTopic = "Hurray, something went wrong baby";
+    $scope.alertMessage = "Ooops, what did I do?"
+
     $scope.colors = ["White", "Black", "Blue", "Red", "Silver"];
 
     $scope.park = function(car) 

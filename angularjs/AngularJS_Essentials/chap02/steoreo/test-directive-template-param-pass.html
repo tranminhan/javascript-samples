@@ -1,0 +1,22 @@
+<!doctype html>
+<html ng-app="parking">
+    <head>
+        <title>Parking</title>
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/directives.js"></script>
+        <script src="js/controllers.js"></script>
+        <style type="text/css">
+              .selected {
+                background-color: #FAFAD2;
+              }
+        </style>
+    </head>
+    <body ng-controller="parkingCtrl">
+        <h3>Pack Parking</h3>
+        <template-alert-param-pass
+                topic="custom topic from param"
+                description="custom description from param">
+                </template-alert-param-pass>
+    </body>
+</html>

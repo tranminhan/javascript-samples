@@ -16,3 +16,34 @@ parking.directive("templateUrlAlert", function(){
         templateUrl: "alert.html"
     };
 });
+
+parking.directive("templateReplaceAlert", function(){
+    return {
+        templateUrl: "alert.html",
+        replace: true
+    };
+});
+
+parking.directive("templateAlertParamPass", function(){
+    return {
+        templateUrl: "alert-param.html",
+        replace: true,
+        restrict: 'E',
+        scope: {
+            topic: "@topic",
+            description: "@description"
+        }
+    };
+});
+
+parking.directive("templateAlertParamBinding", function(){
+    return {
+        templateUrl: "alert-param.html",
+        replace: true,
+        restrict: 'E',
+        scope: {
+            topic: "=topic",
+            description: "=description"
+        }
+    };
+});

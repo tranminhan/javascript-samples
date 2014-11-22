@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body onload="loadPhotos();">
+<div id="photos">Loading photos...</div>
+<script>
+
+    function loadPhotos() {
+        // secret 3fe3d415bd4efd58
+        // key b48a2571d76d9e04b6066330eccf55ae
+        var api_key = 'b48a2571d76d9e04b6066330eccf55ae';
+        var method = 'GET';
+        var url = 'https://api.flickr.com/services/rest/?'
+                        + 'method=flickr.people.getPublicPhotos&'
+                        + 'user_id=32951986%40N05&'
+                        + 'extras=url_q&format=json&nojsoncallback=1&'
+                        + 'api_key=' + api_key
+                ;
+
+        var xhr = new XMLHttpRequest();
+        if (!('withCredentials' in xhr)) {
+            console.log("browser does not support CORS");
+            return;
+        }
+
+        xhr.open(method, url);
+        xhr.onerror = function() {
+            console.log('There was an error');
+        };
+
+        xhr.onload = function() {
+            var data = JSON.parse(xhr.responseText);
+            if (data.stat == 'ok') {
+                var photoDiv = document.getElementById('photos');
+                photoDiv.innerHTML = '';
+
+                var photos = data.photos.photo;
+                for (var i = 0; i < photos.length; i++) {
+                    var img = document.createElement('img');
+                    img.src = photos[i].url_q;
+                    photoDiv.appendChild(img);
+                }
+            }
+            else {
+                alert(data.message);
+            }
+        }
+
+        xhr.send();
+    };
+
+</script>
+</body>
+</html>
